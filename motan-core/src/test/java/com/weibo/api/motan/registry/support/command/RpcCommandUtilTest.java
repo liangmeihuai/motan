@@ -81,7 +81,9 @@ public class RpcCommandUtilTest {
 
 
 class Constants {
-    static String commandString1 =
-            "{\"clientCommandList\":[{\"dc\":\"yf\",\"index\":1,\"mergeGroups\":[\"openapi-tc-test-rpc:1\",\"openapi-yf-test-rpc:1\"],\"pattern\":\"com.weibo.Hello\",\"remark\":\"切换50%流量到另外一个机房\",\"routeRules\":[],\"version\":\"1.0\"}]}";
+//    static String commandString1 =
+//            "{\"clientCommandList\":[{\"dc\":\"yf\",\"index\":1,\"mergeGroups\":[\"openapi-tc-test-rpc:1\",\"openapi-yf-test-rpc:1\"],\"pattern\":\"com.weibo.Hello\",\"remark\":\"切换50%流量到另外一个机房\",\"routeRules\":[],\"version\":\"1.0\"}]}";
+
+    static String commandString1 ="";
 
 }
