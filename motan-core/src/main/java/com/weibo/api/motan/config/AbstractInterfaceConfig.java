@@ -356,6 +356,7 @@ public class AbstractInterfaceConfig extends AbstractConfig {
     }
 
     protected void checkInterfaceAndMethods(Class<?> interfaceClass, List<MethodConfig> methods) {
+        //检查输入的服务接口是否为空
         if (interfaceClass == null) {
             throw new IllegalStateException("interface not allow null!");
         }

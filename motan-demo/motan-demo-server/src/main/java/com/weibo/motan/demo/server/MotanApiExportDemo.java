@@ -29,11 +29,11 @@ public class MotanApiExportDemo {
         ServiceConfig<MotanDemoService> motanDemoService = new ServiceConfig<MotanDemoService>();
 
         // 设置接口及实现类
-        motanDemoService.setInterface(MotanDemoService.class);
-        motanDemoService.setRef(new MotanDemoServiceImpl());
+        motanDemoService.setInterface(MotanDemoService.class);//设置服务接口，客户端在rpc调用时，会在协议中传递接口名称，从而实现与具体实现类一一对应
+        motanDemoService.setRef(new MotanDemoServiceImpl());//设置接口实现类，实际的业务代码
 
         // 配置服务的group以及版本号
-        motanDemoService.setGroup("motan-demo-rpc");
+        motanDemoService.setGroup("motan-demo-rpc");//服务所属的组
         motanDemoService.setVersion("1.0");
 
         // 配置注册中心直连调用
@@ -54,8 +54,8 @@ public class MotanApiExportDemo {
         protocol.setName("motan");
         motanDemoService.setProtocol(protocol);
 
-        motanDemoService.setExport("motan:8002");
-        motanDemoService.export();
+        motanDemoService.setExport("motan:8002");//本服务的监控端口号是8010
+        motanDemoService.export();//发布及在zookeeper上注册此服务
 
         MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER, true);
 

@@ -145,6 +145,11 @@ public abstract class AbstractConfig implements Serializable {
         return checkMethod;
     }
 
+    /**
+     * 判断类型是否为基本类型
+     * @param type
+     * @return
+     */
     private boolean isPrimitive(Class<?> type) {
         return type.isPrimitive() || type == String.class || type == Character.class || type == Boolean.class || type == Byte.class
                 || type == Short.class || type == Integer.class || type == Long.class || type == Float.class || type == Double.class;
