@@ -114,7 +114,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
 
         checkInterfaceAndMethods(interfaceClass, methods);
 
-        List<URL> registryUrls = loadRegistryUrls();
+        List<URL> registryUrls = loadRegistryUrls();//加载注册中心的url,支持多个注册中心
         if (registryUrls == null || registryUrls.size() == 0) {
             throw new IllegalStateException("Should set registry config for service:" + interfaceClass.getName());
         }

@@ -53,7 +53,7 @@ public abstract class MotanAbstractException extends RuntimeException {
     public MotanAbstractException(String message, Throwable cause) {
         super(message, cause);
         this.errorMsg = message;
-    }
+}
 
     public MotanAbstractException(String message, Throwable cause, MotanErrorMsg motanErrorMsg) {
         super(message, cause);

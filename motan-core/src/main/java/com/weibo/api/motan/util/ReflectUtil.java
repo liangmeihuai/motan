@@ -54,6 +54,10 @@ public class ReflectUtil {
 
     /**
      * 获取method方式的接口参数，以逗号分割，拼接clz列表。 如果没有参数，那么void表示
+     * 如
+     * public void method1(int a,String b,List<String> c,Integer[][] d)
+     *
+     * 那么返回则是:int,java.lang.String,java.util.List,java.lang.Integer[][]
      * 
      * @param method
      * @return
@@ -164,7 +168,25 @@ public class ReflectUtil {
 
     /**
      * 需要支持一维数组、二维数组等
-     * 
+     *Integer inta=new Integer(1);//java.lang.Integer
+     Integer[][] intArr=new Integer[1][2];//java.lang.Integer[][]
+     int[] iiArr=new int[]{1,2,3};//int[]
+     List<Integer> list=new ArrayList<Integer>();//java.util.ArrayList
+     list.add(1);
+     list.add(2);
+
+     getNameWithoutCache(inta.getClass());
+     getNameWithoutCache(intArr.getClass());
+     getNameWithoutCache(iiArr.getClass());
+     getNameWithoutCache(list.getClass());
+     getNameWithoutCache(int.class);//int
+
+     返回:
+     java.lang.Integer
+     java.lang.Integer[][]
+     int[]
+     java.util.ArrayList
+     int
      * @param
      * @return
      */
