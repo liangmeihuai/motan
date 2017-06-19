@@ -52,7 +52,7 @@ public class AbstractInterfaceConfig extends AbstractConfig {
 
     private static final long serialVersionUID = 4776516803466933310L;
 
-    // 暴露、使用的协议，暴露可以使用多种协议，但client只能用一种协议进行访问，原因是便于client的管理
+    //暴露、使用的协议，暴露可以使用多种协议，但client只能用一种协议进行访问，原因是便于client的管理
     protected List<ProtocolConfig> protocols;
 
     // 注册中心的配置列表

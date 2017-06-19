@@ -131,13 +131,17 @@ public abstract class AbstractConfig implements Serializable {
     }
 
     private boolean isConfigMethod(Method method) {
+        //判断是否是配置方法
         boolean checkMethod =
-                (method.getName().startsWith("get") || method.getName().startsWith("is")) && !"isDefault".equals(method.getName())
-                        && Modifier.isPublic(method.getModifiers()) && method.getParameterTypes().length == 0
-                        && isPrimitive(method.getReturnType());
+                (method.getName().startsWith("get") || method.getName().startsWith("is")) //方法名以get或者is开头
+                        && !"isDefault".equals(method.getName())//并且方法名不等于"isDefault"
+                        && Modifier.isPublic(method.getModifiers()) //并且方法名是公共方法
+                        && method.getParameterTypes().length == 0//并且方法的输入参数长度为0
+                        && isPrimitive(method.getReturnType());//并且此方法返回的是基本类型
 
         if (checkMethod) {
             ConfigDesc configDesc = method.getAnnotation(ConfigDesc.class);
+            //如果这个方法配置了ConfigDesc，但是exclude=true，说明不是配置的方法
             if (configDesc != null && configDesc.excluded()) {
                 return false;
             }

@@ -120,7 +120,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         }
 
         Map<String, Integer> protocolPorts = getProtocolAndPort();
-        for (ProtocolConfig protocolConfig : protocols) {
+            for (ProtocolConfig protocolConfig : protocols) {
             Integer port = protocolPorts.get(protocolConfig.getId());
             if (port == null) {
                 throw new MotanServiceException(String.format("Unknow port in service:%s, protocol:%s", interfaceClass.getName(),

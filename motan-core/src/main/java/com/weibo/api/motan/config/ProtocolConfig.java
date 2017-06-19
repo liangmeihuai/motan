@@ -57,7 +57,7 @@ public class ProtocolConfig extends AbstractConfig {
     // server支持的最大连接数
     protected Integer maxServerConnection;
 
-    // 连接池管理方式，是否lifo
+    // 连接池管理方式，是否lifo（Last In First Out）
     protected Boolean poolLifo;
     // 是否延迟init
     protected Boolean lazyInit;
@@ -77,7 +77,7 @@ public class ProtocolConfig extends AbstractConfig {
     protected Integer acceptConnections;
 
     // proxy type, like jdk or javassist
-    protected String proxy;
+    protected String proxy;//服务端无proxy，客户端具有代理功能，他通过InvocationHandler来拦截方法调用。目前只使用了jdk原生动态代理工具
     // filter, 多个filter用","分割，blank string 表示采用默认的filter配置
     protected String filter;
     // retry count if call failure
